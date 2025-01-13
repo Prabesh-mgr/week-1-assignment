@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px black solid;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="" onsubmit="storeData(event)">
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <input type="text" id="cast" placeholder="Enter your cast" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Cast</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        const tbody = document.querySelector('tbody');
+
+        // Function to handle form submission and add a new row
+        function storeData(event) {
+            event.preventDefault(); // Prevent form from refreshing the page
+
+            const name = document.getElementById("name").value;
+            const cast = document.getElementById("cast").value;
+
+            // Add a new row with "Delete" buttons
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${name}</td>
+                <td>${cast}</td>
+                <td><button onclick="deleteRow(this)">Delete</button></td>
+            `;
+
+            tbody.appendChild(row);
+
+            // Clear input fields
+            document.getElementById("name").value = '';
+            document.getElementById("cast").value = '';
+        }
+
+        // Function to delete the row when "Delete" button is clicked
+        function deleteRow(button) {
+            const row = button.closest('tr'); // Find the closest <tr> (the row containing the button)
+            row.remove(); // Remove the row from the table
+        }
+    </script>
+</body>
+
+</html>

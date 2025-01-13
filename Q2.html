@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Welcome to my page</h1>
+    <button onclick="oddAndEven()">Enter Your number</button>
+
+    <script>
+        function oddAndEven(){
+            let num = prompt ("Enter your number");
+
+            if(isNaN(num) || num === ""){
+                alert ("Please valid number ")
+            }
+
+            if(num%2===0 || num<0 ){
+                alert ("Even Number and positive");
+            }else{
+                alert ("Odd Number and negative")
+            }
+        }
+
+    </script>
+</body>
+</html>

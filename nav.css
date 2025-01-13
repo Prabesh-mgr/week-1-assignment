@@ -1,0 +1,52 @@
+* {
+    padding: 2px;
+    margin: 0;
+
+}
+nav {
+    display: flex;
+    background-color: rgb(42, 24, 21);
+    padding: 15px;
+    justify-content: space-between;
+}
+.list {
+    display: flex;
+    gap: 30px;
+    text-decoration: none;
+    list-style: none;
+}
+.list a {
+    width: 80px;
+    color: white;
+    text-decoration: none;
+}
+.logo{
+    color: white;
+}
+.image{
+    height: 20%;
+    width: auto;
+}
+.container img {
+    height: 100%;
+    width: 100%;
+  }
+.body_wrapper{
+    display: flex;
+    justify-content: space-around;
+    gap: 4px;
+    margin-top: 10px;
+}
+.card{
+    background-color: bisque;
+    padding: 10px;
+    border-radius: 5px;
+}
+.btn{
+    background-color: blue;
+    color: white;
+    border-radius: 7px;
+    padding: 5px;
+    display: flex;
+    margin: auto auto;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" placeholder="email" id="email">
+        <input type="text" placeholder="password" id="password">
+        <button id="submit" onclick="show(event)">submit</button>
+
+    </form>
+
+    <script>
+        function show(event) {
+
+            event.preventDefault();
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var submit = document.getElementById("submit");
+
+            console.log(`your email is ${email} and password is ${password}`);
+        }
+    </script>
+
+</body>
+
+</html>

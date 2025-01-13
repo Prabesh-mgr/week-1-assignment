@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            transition: background-color 0.5s ease;
+        }
+        .bg-body{
+            background: #000;
+            color: aliceblue;
+        }
+        .changeColor{
+            background: white;
+            color: black;
+        }
+    </style>
+    
+</head>
+<body id="bg-body" class="bg-body">
+    <p >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus quidem 
+        deleniti debitis eius perspiciatis, fuga sunt excepturi assumenda quaerat
+         voluptas!
+    </p>
+    <button onclick="onBgChange()">Black </button>
+
+    <script >
+        function onBgChange(){
+            let body = document.body;
+            let button = document.querySelector("button");
+
+            if(body.classList.contains("bg-body")){
+                body.classList.remove("bg-body");
+                body.classList.add("changeColor");
+                button.textContent = "Black";
+            }else{
+                body.classList.remove("changeColor");
+                body.classList.add("bg-body");
+                button.textContent = "White";
+            }
+
+        }
+       
+    </script>
+</body>
+</html>

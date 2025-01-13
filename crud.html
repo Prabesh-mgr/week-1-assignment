@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" onsubmit="adiTion()">
+        <input type="text" placeholder="enter your name" id="name" required>
+        <input type="text" placeholder="enter your cast" id="cast" required>
+        <button>Submit</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Cast</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        let form1 = document.querySelector("form")
+        let tbody = document.querySelector("tbody")
+
+        function adiTion() {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let cast = document.getElementById("cast").value;
+
+            let demo = document.createElement("tr")
+            demo.innerHTML = `
+                <td>${name}</td>
+                <td>${cast}</td>
+                <td><button onClick = "deleteData(this)">Delete</buttom></td>
+                `
+                tbody.appendChild(demo);
+
+                document.getElementById("name").value='';
+                document.getElementById("cast").value='';
+
+        }
+        function deleteData(button){
+            let row = button.closest('tr');
+            row.remove()
+
+        }
+
+        form1.addEventListener("submit", adiTion(), deleteData())
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    padding: 10px;
+    margin-right: 10px;
+}
+nav{
+    display: flex;
+    place-content: end;
+    align-items: center;
+    gap: 1.5rem;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+}
+ul{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+
+}
+.img img{
+    height: 18px;
+    width: auto;
+}
+.btn{
+    padding: 9px 14px;
+    border-radius: 18px;
+    background: #1E64D4;
+    color: white;
+    border: none;
+    font-size: medium;
+}
+.google{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    gap: none;
+}
+.g{
+    color: #4285F4;
+}
+.o{
+    color: #EA4335;
+}
+.oo{
+    color: #FBBC05;
+}
+.gg{
+    color: #4285F4;
+}
+.l{
+    color: #34A853;
+}
+.e{
+    color: #EA4335;
+}
+.searchBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+}
+.searchBar .input{
+    border: none;
+    box-shadow: 0 0 1rem rgba(0,0,0, 0.2);
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 15px 40px;
+    width: 35%;
+    outline: none;
+
+}
+.mic{
+    height: 15px;
+    width: auto;
+    margin-right: 10px;
+    cursor: pointer;
+
+}
+.camera{
+    height: 15px;
+    width: auto;
+    cursor: pointer;
+}
+.searchIcon{
+    height: 15px;
+    width: auto;
+    position: absolute;
+    cursor: pointer;
+    margin-right: 38%;
+}
+.bar{
+    position: absolute;
+    margin-left: 35%;
+}
+.box-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 1rem;
+}
+button{
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+span{
+    color: #1E64D4;
+}
+.gallary{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.card-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+
+}
+.card img{
+    height: 200px;
+    width: auto;
+}
+.card{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    box-shadow: 0 0 1rem rgba(0,0,0, 0.2);
+    border-radius: 20PX;
+}
+.cardBtn{
+    background-color: #1E64D4;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    color: #fff;
+}
+.personalWebsite{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+.personalCard img{
+    height: 300px;
+}
+.myDetail{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.personalCard p{
+    justify-content: center;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.resForm form input{
+    display: block;
+    padding: 10px;
+    outline: none;
+}
+hr{
+    margin-top: 20px;
+}
+.userName{
+    display: flex;
+    gap: 1rem;
+}
+.resForm{
+    max-width: 100%;
+}
