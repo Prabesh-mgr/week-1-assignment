@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    border: none;
+}
+.container{
+    padding: 20px 30px;
+    box-shadow: 0 0 1rem rgba(0,0,0, 0.2);
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+h1{
+    color: tomato;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#addBtn{
+    padding: 5px;
+    background: tomato;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    margin: auto auto;
+    margin-top: 10px;
+    
+}
+input{
+    padding: 10px;
+    outline: none;
+    width: calc(100% - 30px);
+}
+
+li.completed{
+    text-decoration: line-through;
+    color: #757575;
+}
+button.delete-btn{
+    padding: 5px;
+    background: tomato;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    margin-left: 100px;
+}
+li{
+    padding: 10px;
+    margin: 5px 0;
+    background: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.checkbox{
+    margin-right: 100px;
+}
+#error-message{
+    color: #ff0000;
+}
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff0000;
+    color: #fff;
+    padding: 15px;
+}
+
+h3{
+    margin-top: 10px;
+    color: tomato;
+}

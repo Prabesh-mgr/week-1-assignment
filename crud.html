@@ -19,8 +19,8 @@
 
 <body>
     <form action="" onsubmit="adiTion()">
-        <input type="text" placeholder="enter your name" id="name" required>
-        <input type="text" placeholder="enter your cast" id="cast" required>
+        <input type="text" placeholder="enter your name" id="name">
+        <input type="text" placeholder="enter your cast" id="cast">
         <button>Submit</button>
     </form>
 
@@ -47,6 +47,11 @@
             let name = document.getElementById("name").value;
             let cast = document.getElementById("cast").value;
 
+            if(name === "" || cast === ""){
+                alert ("Please enter your name or cast")
+                return;
+            }
+
             let demo = document.createElement("tr")
             demo.innerHTML = `
                 <td>${name}</td>
@@ -62,9 +67,8 @@
         function deleteData(button){
             let row = button.closest('tr');
             row.remove()
-
+            
         }
-
         form1.addEventListener("submit", adiTion(), deleteData())
 
     </script>
