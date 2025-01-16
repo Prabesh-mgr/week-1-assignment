@@ -5,6 +5,7 @@
     let errorMess = document.getElementById("error-message");
     let taskList = document.getElementById("taskList");
     let count = document.getElementById("taskCount");
+    let scrollBar = document.getElementById("scrollBar")
 
     let taskcounter = 0;
     let taskSet = new Set();
@@ -13,10 +14,19 @@
         count.textContent = `Task Remaining: ${taskcounter}`
     }
 
+    function toCheckVisibility(){
+        if(taskList.children.length > 2 ){
+            scrollBar.style.overflowY = "scroll";
+        }else{
+            scrollBar.style.overflowY = "hidden";
+        }
+    }
+
+  
+
     form.addEventListener("submit", function (event){
         event.preventDefault();
         let inputValue = task.value.trim();
-
 
         if(inputValue === ""){
             errorMess.textContent = "!! Please enter a task !!";
@@ -47,9 +57,13 @@
             taskSet.delete(inputValue);
             taskcounter--;
             updatedTaskCount();
+            toCheckVisibility()
+
         })
 
         let todoList = document.createElement("span");
+        todoList.setAttribute("title", inputValue);
+        todoList.classList.add("textWrap");
         todoList.textContent = inputValue;
 
         li.appendChild(checkbox);
@@ -63,5 +77,7 @@
 
         taskcounter++;
         updatedTaskCount();
+        toCheckVisibility()
     })
     updatedTaskCount()
+    toCheckVisibility()
