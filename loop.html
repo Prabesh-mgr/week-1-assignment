@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Loop Pratices</h1>
+
+    <script>
+
+        let countries = [
+            {
+                "code": "af",
+                "name": "Afghanistan",
+                "path": "afghanistan"
+            },
+            {
+                "code": "al",
+                "name": "Albania",
+                "path": "albania"
+            },
+            {
+                "code": "dz",
+                "name": "Algeria",
+                "path": "algeria"
+            },
+        ];
+
+        function toFindCountryByCode(countryName){
+            for(let i = 0; i < countries.length; i++){
+                let country = countries[i]
+                if(country.name.toLowerCase == countryName.name.toLowerCase){
+                    console.log("code", country.code);
+                }else{
+                    console.log("Country code not found");   
+                }
+            }
+        }
+        toFindCountryByCode("Algeria")
+
+
+
+    </script>
+</body>
+
+</html>

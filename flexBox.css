@@ -1,22 +1,32 @@
 *{
-    padding: 0;
+    padding: 5px;
     margin: 0;
 }
-body{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 300px;
-    border: 1px solid black;
-    padding: 10px;
-    
+.container{
+    background: tomato;
 }
-.items{
-    background: #000;
-    color: white;
-    padding: 50px;
-    margin: 10px;
+nav{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     flex-shrink: 1;
+}
+nav img{
+    height: 40px;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    column-gap: 15px;
+}
+nav ul li{
+    font-size: 20px;
+}
+@media(max-width: 500px){
+    nav ul{
+        display: block;
+        color: white;
+        margin: auto;
+    }
 }

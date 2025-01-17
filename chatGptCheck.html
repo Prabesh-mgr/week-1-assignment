@@ -1,69 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Text Truncation with Tooltip</title>
-  <style>
-    /* Truncated text container */
-    .truncate-container {
-      width: 300px; /* Fixed width to create truncation */
-      white-space: nowrap; /* Prevent text wrapping */
-      overflow: hidden; /* Hide the overflowing text */
-      text-overflow: ellipsis; /* Show "..." for overflowed text */
-      position: relative; /* Position for tooltip */
-      cursor: pointer; /* Change cursor on hover */
-    }
-
-    /* Tooltip styling */
-    .tooltip {
-      display: none; /* Hidden by default */
-      position: absolute; /* Positioned relative to parent */
-      top: 150%; /* Position tooltip below text */
-      left: 0; /* Align tooltip to the left of the parent */
-      background-color: rgba(0, 0, 0, 0.85); /* Dark background for tooltip */
-      color: white; /* White text color */
-      padding: 8px; /* Add padding to tooltip */
-      border-radius: 4px; /* Rounded corners */
-      white-space: normal; /* Allow text wrapping in tooltip */
-      z-index: 10; /* Make sure it appears on top */
-      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
-      max-width: 300px; /* Limit tooltip width */
-    }
-
-    /* Show tooltip on hover */
-    .truncate-container:hover .tooltip {
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-  <div id="dynamic-text-container"></div>
+    <h1>Hello</h1>
 
-  <script>
-    // Dynamically generated text
-    const longText = "This is a dynamically generated long text that will be truncated because it is too long to fit in the container.";
+    <script>
+        // First promise for Data 1
+        let data1Promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log("Data 1 is received");
+                resolve();
+            }, 4000);
+        });
 
-    // Get the parent container
-    const container = document.getElementById("dynamic-text-container");
+        // Second promise for Data 2
+        let data2Promise = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("Data 2 is received");
+                    resolve();
+                }, 4000);
+            });
+        };
 
-    // Create the truncate container
-    const truncateDiv = document.createElement("div");
-    truncateDiv.classList.add("truncate-container"); // Add the truncate class
+        console.log("Data 1 Processing");
 
-    // Add the visible truncated text
-    truncateDiv.textContent = longText;
-
-    // Create the tooltip for full text
-    const tooltip = document.createElement("div");
-    tooltip.classList.add("tooltip"); // Add the tooltip class
-    tooltip.textContent = longText; // Set the full text
-
-    // Append the tooltip to the truncated container
-    truncateDiv.appendChild(tooltip);
-
-    // Append the truncated container to the parent container
-    container.appendChild(truncateDiv);
-  </script>
+        // Execute promises sequentially
+        data1Promise
+            .then(() => {
+                console.log("Data 2 Processing");
+                return data2Promise(); // Trigger second promise after first resolves
+            })
+            .then(() => {
+                console.log("All data processed successfully");
+            })
+            .catch((error) => {
+                console.error("An error occurred:", error);
+            });
+    </script>
 </body>
 </html>

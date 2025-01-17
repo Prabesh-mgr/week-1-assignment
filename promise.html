@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <script>
+
+        // let promise = new Promise((resolve, reject)=>{
+        //     setTimeout(() => {
+        //         console.log("Data one is received");
+        //         resolve()   
+        //     }, 4000);
+        // })
+
+        // console.log("data1 Processing");
+
+        // promise.
+        // then((res)=>{
+        //     console.log("data2 is processing");
+        //     return new Promise((resolve, reject)=>{
+        //         setTimeout(() => {
+        //             console.log("Data 2 is printed");
+        //         }, 4000);
+        //     })
+        // })
+
+
+        function dataShowing(dataId){
+            return new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                console.log("Data", dataId);
+                resolve("sucessfully")
+            }, 3000)
+            })
+        }
+        
+        console.log("data is Processing1");
+
+        dataShowing(1)
+        .then(()=>{
+            console.log("data is Processing2");
+            return dataShowing(2);
+        }).then(()=>{
+            console.log("data is Processing3");
+            return dataShowing(3)
+        }).then((res)=>{
+            console.log(res);
+        })
+        
+
+
+
+
+    </script>
+</body>
+</html>

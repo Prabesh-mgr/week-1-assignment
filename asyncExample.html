@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Hi, My name is prabesh Magar
+    </h1>
+    <button id="btn">Start</button>
+    <button id="btn1">Stop</button>
+
+
+    <script>
+    //     const textMes = document.querySelector("h1")
+
+    //    let message = setTimeout(() => {
+    //         textMes.innerHTML = "I am no body"
+    //     }, 2000);
+
+    //     const stopAsyc = document.querySelector("button").addEventListener("click", function(){
+    //         clearTimeout(message);
+    //         console.log("Stopped");
+    //     })
+    let timeINterval = null;
+
+    function startingBtn(){
+        console.log("prabsesh", Date.now());
+    };
+
+    document.querySelector("#btn").addEventListener("click", function(){
+        if(!timeINterval){
+            timeINterval = setInterval(startingBtn, 1000);
+            console.log("Started")
+        }
+    })
+    document.querySelector("#btn1").addEventListener("click", function(){
+        if(timeINterval){
+            clearInterval(timeINterval)
+            timeINterval = null;
+            console.log("stopped")
+        }
+    })
+    </script>
+</body>
+
+</html>
