@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetching Api</h1>
+    <p id="apiData">
+
+    </p>
+
+    <script>
+        let apiData = document.querySelector("#apiData");
+
+        let URL = "https://dummyjson.com/users"
+
+        async function fetchApi(){
+            let response = await fetch(URL);
+            let usuableData = await response.json();
+            console.log(usuableData.users[0]);
+            apiData.innerHTML = `${usuableData.users[0].id}`
+        }
+        fetchApi()
+    </script>
+</body>
+</html>
