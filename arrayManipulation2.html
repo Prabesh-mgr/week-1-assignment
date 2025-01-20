@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hi </h1>
+    <script>
+        let todos = [
+            {
+                title: "variable",
+                status: "completed",
+                show: "Congrulation you have completed your assignment",
+                createAt: "2024-01-03"
+            },
+            {
+                title: "array",
+                status: "completed",
+                show: "Congrulation you have completed your assignment",
+                createAt: "2024-01-05"
+            },
+            {
+                title: "object",
+                status: "completed",
+                show: "Congrulation you have completed your assignment",
+                createAt: "2024-01-07"
+            },
+            {
+                title: "function",
+                status: "pending",
+                show: "Sorry you have failed your assignment",
+                createAt: "2024-01-09"
+            },
+            {
+                title: "function",
+                status: "completed",
+                show: "Sorry you have failed your assignment",
+                createAt: "2024-01-10"
+            },
+        ];
+        //    let newArray = todos.filter((todo)=> todo.status === "completed" );
+        //    console.log(newArray);
+        let groupedTasks = todos.reduce((acc, todo) => {
+            if (todo.status === "completed") {
+                acc.completed.push(todo);
+            } else {
+                acc.pending.push(todo);
+            }
+            return acc;
+        }, { completed: [], pending: [] });
+
+        console.log(groupedTasks);
+
+    </script>
+</body>
+
+</html>

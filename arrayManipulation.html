@@ -1,26 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Array manipulation</h1>
 
     <script>
 
-        const numbers = [5, 3, 8, 3, 1, 5, 7, 8, 2];
+        // let cars = ["Honda","Electric Vechicles(EV)","Beneli","Apple"]
+        // cars.push("Iam New","Hello World", "Ho")
+        // // console.log(cars);
 
-        function removeDubli(){
-            
-            
-             let updatedNum = [...new Set(numbers)];
-                return updatedNum;
-                console.log(updatedNum);
+        // let newItems = cars.splice(2,0, "I am 3rd element", "I am 4th element")
+
+        // let items = cars.slice(2,4);
+        // console.log(items);
+
+        // delete cars[1];
+        // console.log(cars);
+
+        // let del = cars.pop("I am poped");
+        // console.log(del);
+
+        // let numLength = cars.length
+        // console.log(numLength);
+
+
+        // let carBrands = ["Toyota", "Ford", "BMW", "Mercedes", "Audi", "HeroHonda"];
+
+        // carBrands.forEach((element)=>{
+        //         console.log(`Car brand name is ${element}`)
+        // });
+
+        // let newArray = carBrands.map((el)=> el.toUpperCase())
+        //    console.log(newArray);
+
+        //   let fourNumberCars =  carBrands.filter((el,idx)=> el.length>4)
+        //    console.log(fourNumberCars);
+
+        // let newItems = carBrands.reduce((el,items)=>{
+        //     return el + " " + items
+        // }, "")
+        // console.log(newItems);
+
+
+        // let items = carBrands.indexOf("BMW");
+        // let item = carBrands.lastIndexOf("BMW");
+        // console.log(items);
+        // console.log(item);
+
+        // let dupliCars = carBrands.includes("BMW");
+        // console.log(dupliCars);
+
+        // let startingWord = carBrands.find((el)=>{
+        //      return el.endsWith("W");
+        // })
+        // console.log(startingWord);
+
+        // let asc = carBrands.sort();
+        // console.log(asc);
+
+        // let reverseIng = carBrands.reverse();
+        // console.log(reverseIng);
+        // console.log(carBrands);
+
+        // let removeItems = carBrands.splice(2, 1, "HI i am new car")
+        // console.log(removeItems);
+
+        // //To print the name and gmail ;
+
+        // const nepaliNames = ["prabesh", "ram", "shyam", "kiran"]
+        // const newArray = []
+
+        // for(let i = 0; i <= nepaliNames.length; i++){
+        //     let element = nepaliNames[i];
+        //     newArray.push({
+        //         name: `${element}`,
+        //         gmail: `${element}@gmail.com`,
+        //         password: `${element}${i}`
+        //     })
+        // }
+        // console.log(newArray);
+
+
+        let countries = [
+            {
+                "code": "af",
+                "name": "Afghanistan",
+                "path": "afghanistan"
+            },
+            {
+                "code": "al",
+                "name": "Albania",
+                "path": "albania"
+            },
+            {
+                "code": "dz",
+                "name": "Algeria",
+                "path": "algeria"
+            },
+        ];
+
+        function findCode(countryName) {
+            for (let i = 0; i < countries.length; i++) {
+                let element = countries[i]
+                if (element.name.toLowerCase() === countryName.toLowerCase()) {
+                    console.log("code", element.code);
+                    break;
+                } 
+                else{
+                    console.log("Country code not found");
+                }
             }
-            removeDubli();
-
+        }
+        findCode("Prabesh")
     </script>
 </body>
+
 </html>
